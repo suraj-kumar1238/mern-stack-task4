@@ -1,0 +1,21 @@
+const express = require("express");
+const app = express();
+
+app.use(express.json());
+
+// test route
+app.get("/", (req, res) => {
+  res.send("Server chal raha hai ✅");
+});
+
+// register route
+app.post("/api/auth/register", (req, res) => {
+  res.json({
+    message: "User registered ✅",
+    data: req.body
+  });
+});
+
+app.listen(5000, () => {
+  console.log("Server running on port 5000");
+});
